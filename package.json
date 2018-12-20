@@ -1,0 +1,34 @@
+{
+  "name": "imgix-js-sign-url",
+  "version": "0.1.0",
+  "description": "A helper module to sign/secure imgix URLs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/prosellen/imgix-js-sign-url.git"
+  },
+  "keywords": [
+    "imgix",
+    "sercure",
+    "sign",
+    "url"
+  ],
+  "author": "Peter Rosellen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prosellen/imgix-js-sign-url/issues"
+  },
+  "homepage": "https://github.com/prosellen/imgix-js-sign-url#readme",
+  "dependencies": {
+    "md5": "2.2.1"
+  },
+  "devDependencies": {
+    "eslint": "5.10.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jest": "22.1.2"
+  }
+}
