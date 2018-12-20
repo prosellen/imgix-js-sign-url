@@ -1,8 +1,12 @@
 'use strict'
 
-import { isArray } from 'util';
-
 const md5 = require('md5');
+
+const sanitize = (path) => {
+    path = path.replace(/^\//, '');
+    path = encodeURI(path);
+    return '/' + path;
+};
 
 const signer = (imageURL, secureURLToken, imgixDomains = [])  => {
     let signedImageURL = '';
