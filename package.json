@@ -1,5 +1,5 @@
 {
-  "name": "imgix-js-sign-url",
+  "name": "@prosellen/imgix-js-sign-url",
   "version": "0.1.0",
   "description": "A helper module to sign/secure imgix URLs",
   "main": "index.js",
