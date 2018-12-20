@@ -4,6 +4,15 @@ import signer from '../index.js';
 
 const secureURLToken = 't0k3n';
 
+describe('errors', () => {
+    it('should skip non-url strings', (done) => {
+        expect(signer('Lorem Ipsum', secureURLToken))
+            .toMatch('Lorem Ipsum');
+
+        done();
+    });
+});
+
 describe('basics', () => {
     it('should sign imgix domains', (done) => {
         expect(signer('https://baz.imgix.net/foo/bar/?w=10&h=20', secureURLToken))
@@ -16,6 +25,7 @@ describe('basics', () => {
         done();
     });
 });
+
 describe('with supplied domain', () => {
     it('should sign imgix domains if matching domain is supplied', (done) => {
         expect(signer('https://baz.imgix.net/foo/bar/?w=10&h=20', secureURLToken, 'baz.imgix.net'))
@@ -31,6 +41,7 @@ describe('with supplied domain', () => {
         done();
     });
 });
+
 describe('with supplied array of domains', () => {
     it('should sign imgix domains if array of matching domains is supplied', (done) => {
         expect(signer('https://baz.imgix.net/foo/bar/?w=10&h=20', secureURLToken, ['baz.imgix.net', 'bat.imgix.net']))

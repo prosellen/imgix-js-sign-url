@@ -5,8 +5,15 @@ import { isArray } from 'util';
 const md5 = require('md5');
 
 const signer = (imageURL, secureURLToken, imgixDomains = [])  => {
-    const urlObj = new URL(imageURL);
     let signedImageURL = '';
+    let urlObj;
+
+    try {
+        urlObj = new URL(imageURL);
+    } catch(err) {
+        console.error(`Error: ${imageURL} doesn't seem to be an URL. Skipping.`);
+        return imageURL;
+    }
 
     if(!Array.isArray(imgixDomains)) {
         imgixDomains = [imgixDomains];
