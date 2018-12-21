@@ -1,6 +1,6 @@
 'use strict';
 
-import signer from '../src/index.js';
+import signer from '../lib';
 
 const secureURLToken = 't0k3n';
 
