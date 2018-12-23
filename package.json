@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "A helper module to sign/secure imgix URLs",
   "main": "lib/index.js",
+  "engines" : { 
+    "node" : ">=6.13.0" 
+  },
   "scripts": {
     "build": "babel src --out-dir lib",
     "watch": "concurrently \"npm run build:watch\" \"npm run test:watch\" --names \"🔨,👓\" --prefix name",

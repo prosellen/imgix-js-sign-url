@@ -1,5 +1,7 @@
 'use strict'
 
+const { URL } = require('url'); 
+
 const md5 = require('md5');
 
 const sanitize = (path) => {
