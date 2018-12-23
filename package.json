@@ -5,9 +5,13 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
+    "watch": "concurrently \"npm run build:watch\" \"npm run test:watch\" --names \"🔨,👓\" --prefix name",
+    "build:watch": "babel src --watch --out-dir lib",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "prepublish": "npm run build"
+    "test:watch": "jest --watch --config jest.config.json",
+    "test:coverage": "jest --coverage",
+    "prepublish": "npm run build && npm run test",
+    "lint": "eslint **.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +29,9 @@
     "url": "https://github.com/prosellen/imgix-js-sign-url/issues"
   },
   "homepage": "https://github.com/prosellen/imgix-js-sign-url#readme",
+  "files": [
+    "/lib"
+  ],
   "dependencies": {
     "md5": "2.2.1"
   },
