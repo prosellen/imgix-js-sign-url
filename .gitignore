@@ -29,4 +29,4 @@ jspm_packages/
 .env
 
 # Don't need the compiled script in source control
-/lib
+lib/*
